@@ -34,8 +34,8 @@ namespace DIS_Assignment1
                 Console.WriteLine(r4);
 
 
-                int[] arr1 = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-                int[] arr2 = new int[] { 1, 2, 3, 7, 8, 10 };
+                int[] arr1 = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9};
+                int[] arr2 = new int[] { 1, 2, 5, 7, 8, 9};
                 Console.WriteLine("The common sub array elements are");
                 int[] r5 = getLargestCommonSubArray(arr1, arr2);
                 for (int i = 0; i < r5.Length; i++)
@@ -228,10 +228,11 @@ namespace DIS_Assignment1
                     int max = 0; // for maximum length of the array
                     int len = 0; // len for updating the windows of sub arrays
                     int end = 0;
-                    int i, j = 0;
+                    int i,j = 0;
 
                     for (i = 0; i < a.Length; i++)
                     {
+                        if (j >= b.Length) break;
                         for (; j < b.Length; j++)
                         {
                             if (a[i] == b[j]) // comparing if there are any common elements
@@ -248,14 +249,7 @@ namespace DIS_Assignment1
                                     end = i - 1; // update the end of subarray
                                 }
                                 len = 0;   // update the length as zero as it subarray ends
-                                if (a[i] > b[j]) // check if elements of a[i] greater than b[j]
-                                {
-                                    break;
-                                }
-                                else
-                                {
-                                    break;
-                                }
+                                break;
                             }
                         }
                     }
@@ -271,6 +265,7 @@ namespace DIS_Assignment1
                     {
                         res[j] = a[i];
                     }
+                    
 
                     return res;
 
