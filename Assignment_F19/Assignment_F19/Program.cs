@@ -249,7 +249,12 @@ namespace DIS_Assignment1
                                     end = i - 1; // update the end of subarray
                                 }
                                 len = 0;   // update the length as zero as it subarray ends
-                                break;
+                                if(a[i] < b[j]) // If a number of 1st array is less than second one, then break it as it is a sorted array
+                                {
+                                    break;
+                                }
+
+                                                               
                             }
                         }
                     }
